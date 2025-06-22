@@ -1,0 +1,73 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# PHP
+vendor/
+composer.lock
+*.cache
+.env
+.env.local
+.env.*.local
+
+# Application specific
+app/public/.cache/
+app/public/.db/
+app/public/.logs/
+app/public/site.zip
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Configuration files with sensitive data
+config.local.php
+settings.local.php
+
+# Node modules (if any frontend build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+app/public/.db/
+app/public/.cache/
+app/public/.logs/

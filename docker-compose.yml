@@ -1,0 +1,33 @@
+services:
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    image: my-php-app:php7.4
+    container_name: php-fpm
+    volumes:
+      - ./app:/var/www/html:delegated
+      - ./logs/php-fpm:/var/log/php-fpm
+    networks:
+      - webnet
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: my-php-app:nginx
+    container_name: nginx
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - ./app/public:/usr/share/nginx/html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./logs/nginx:/var/log/nginx
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
