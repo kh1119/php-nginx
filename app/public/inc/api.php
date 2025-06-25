@@ -14,7 +14,7 @@ class __api
 		// if($filter['debug']==1) {
 		// 	echo $url . "\n" . json_encode($post) . "\n\n";
 		// }
-		// echo $url . "&" . http_build_query($post) . "\n\n";
+		echo $url . "&" . http_build_query($post) . "\n\n";
 		curl_setopt($curl, CURLOPT_URL, $url);
 		curl_setopt($curl, CURLOPT_HEADER, 1);
 		curl_setopt($curl, CURLOPT_POST, 1);
