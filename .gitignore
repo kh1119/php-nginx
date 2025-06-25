@@ -68,6 +68,3 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
-app/public/.db/
-app/public/.cache/
-app/public/.logs/
