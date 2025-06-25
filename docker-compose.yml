@@ -22,7 +22,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./app/public:/usr/share/nginx/html:ro
+      - /home/_all_public_html:/usr/share/nginx/html:ro
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./logs/nginx:/var/log/nginx
     networks:
