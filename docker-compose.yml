@@ -1,12 +1,13 @@
 services:
   php:
+    user: "0:0"  # Chạy với root
     build:
       context: ./php
       dockerfile: Dockerfile
     image: my-php-app:php7.4
     container_name: php-fpm
     volumes:
-      - /home:/var/www/html:delegated
+      - ./app:/var/www/html:delegated
       - ./logs/php-fpm:/var/log/php-fpm
     networks:
       - webnet
@@ -22,7 +23,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /home/_all/public_html:/usr/share/nginx/html:ro
+      - ./app/public:/usr/share/nginx/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./logs/nginx:/var/log/nginx
     networks:
